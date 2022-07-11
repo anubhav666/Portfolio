@@ -1,0 +1,5 @@
+/*@fontface*/
+    @font-face{
+        font-family: 'Roboto Mono', monospace;
+        src: './fonts/RobotoMono-VariableFont_wght.ttf';
+    }
