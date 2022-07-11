@@ -7,4 +7,9 @@ It uses:<br>
 <li>Bootstrap</li>
 <li>HTML</li>
 <li>CSS</li>
+<li>PHP(Just for parsing)</li>
 </ul>
+
+<br>
+
+## Check out the fully deployed app @luke-anubis.herokuapp.com
