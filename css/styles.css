@@ -60,13 +60,19 @@
 
 .site-main .site-banner .banner-image > img{
     margin-top: 3rem;
-    margin-left: 5rem;
+    margin-left: 5vw;
     width: 20rem;
     border-radius: 1.5rem;
 }
 
 .about-image > img{
-    border-radius: 1.5rem;
-    margin: 5rem 2rem 2rem 5rem;
+    border-radius: 1.5vh;
+    margin: 5vw 2vh 2vh 5vw;
+}
+
+@media only screen and (max-width: 560px) {
+    .about-image > img{
+        max-width: 80%;
+    }
 }
 /* end banner Area */
