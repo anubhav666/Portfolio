@@ -9,7 +9,10 @@
 
 /*start navigation*/
 .header_area .main_menu .navbar .navbar-brand .logo{
-    margin-right: 5%;
+    margin-right: 2vw;
+}
+.header_area .main_menu .navbar .navbar-brand{
+    width: 48vw;
 }
 .header_area .main_menu .navbar .nav-link{
     font-family: var(--monospace);
