@@ -9,7 +9,10 @@
 
 /*start navigation*/
 .header_area .main_menu .navbar .navbar-brand{
-    padding: 0 24rem 0 0rem; 
+    padding: 0 0rem 0 0rem; 
+}
+.navbar-collapse{
+    margin-left: 28vw;
 }
 .header_area .main_menu .navbar .navbar-brand .logo{
     margin-right: 5%;
@@ -72,7 +75,9 @@
 
 @media only screen and (max-width: 560px) {
     .about-image > img{
-        max-width: 80%;
+        max-width: 87%;
     }
+    
+
 }
 /* end banner Area */
