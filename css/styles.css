@@ -8,9 +8,6 @@
 @import url(./partials/_global.css);
 
 /*start navigation*/
-.navbar-collapse{
-    margin-left: 28vw;
-}
 .header_area .main_menu .navbar .navbar-brand .logo{
     margin-right: 5%;
 }
