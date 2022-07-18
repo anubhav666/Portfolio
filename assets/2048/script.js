@@ -4,6 +4,9 @@ const gameBoard = document.getElementById("game-board")
 
 const grid = new Grid(gameBoard)
 
+var xDown = null;                                                        
+var yDown = null;
+
 grid.randomEmptyCell().tile = new Tile(gameBoard)
 grid.randomEmptyCell().tile = new Tile(gameBoard)
 setInput()
@@ -12,6 +15,8 @@ setInput()
 
 function setInput(){
     window.addEventListener("keydown", handleInput, {once:true})
+    document.addEventListener("touchstart", handleTouchStart, true);       
+    document.addEventListener("touchmove", handleTouchMove, false);
 }
 
 async function handleInput(e){
@@ -49,8 +54,7 @@ async function handleInput(e){
         default:
             setInput()
             return
-    }
-
+    }                                                    
     grid.cells.forEach(cell => cell.mergeTiles())
     const newTile = new Tile(gameBoard)
     grid.randomEmptyCell().tile = newTile
@@ -63,6 +67,76 @@ async function handleInput(e){
     }
     setInput()
 }
+
+function handleTouchStart(evt) {
+    const firstTouch = getTouches(evt)[0];                                      
+    xDown = firstTouch.clientX;                                      
+    yDown = firstTouch.clientY;                                      
+};                                                
+  
+async function handleTouchMove(evt) {
+      if ( ! xDown || ! yDown ) {
+          return;
+      }
+  
+      var xUp = evt.touches[0].clientX;                                    
+      var yUp = evt.touches[0].clientY;
+  
+      var xDiff = xDown - xUp;
+      var yDiff = yDown - yUp;
+  
+      if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {/*most significant*/
+          if ( xDiff > 0 ) {
+              /* left swipe */
+              if(!canMoveLeft()){
+                setInput()
+                return
+            }
+            await moveLeft() 
+          } else {
+              /* right swipe */
+              if(!canMoveRight()){
+                setInput()
+                return
+            }
+            await moveRight()
+          }                       
+      } else {
+          if ( yDiff > 0 ) {
+              /* up swipe */ 
+              if(!canMoveUp()){
+                setInput()
+                return
+            }
+            await moveUp()
+          } else { 
+              /* down swipe */
+              if(!canMoveDown()){
+                setInput()
+                return
+            }
+            await moveDown()
+          }                                                                 
+      }
+      /* reset values */
+      xDown = null;
+      yDown = null; 
+      grid.cells.forEach(cell => cell.mergeTiles())
+    const newTile = new Tile(gameBoard)
+    grid.randomEmptyCell().tile = newTile
+    
+    if (!canMoveUp() && !canMoveDown() && !canMoveLeft() && !canMoveRight()){
+        newTile.waitForTransition(true).then(() => {
+            alert("You lose")
+        })
+        return
+    }
+    setInput()                                            
+  };
+function getTouches(evt) {
+    return evt.touches ||             // browser API
+           evt.originalEvent.touches; // jQuery
+  }
 function slideTiles(cells){
     return Promise.all(
     cells.flatMap(group => {
