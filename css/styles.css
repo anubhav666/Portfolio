@@ -38,7 +38,7 @@
 }
 /*end navigation*/
 
-/* start banner Area */
+/* start banner area */
 
 /* .site-main .site-banner {
     background: url(../img/banner/home-banner-3.jpg) no-repeat;
@@ -77,4 +77,36 @@
 
 
 }
-/* end banner Area */
+/* end banner area */
+
+/* start about area */
+
+.site-main .about-area{
+    padding: 8rem 2rem;
+}
+
+.site-main .about-area .about-title h2 > span{
+    display: block;
+    letter-spacing: 21px;
+}
+
+.site-main .about-area .about-title .paragraph > p{
+    padding: 1rem 0;
+}
+
+.socials{
+    font-size: x-large;
+    margin:0 0 1rem 1rem;
+}
+/* end about area */
+
+/* start brands area */
+
+.site-main .brand-area .single-brand{
+    opacity: 50%;
+    margin: 8rem;
+}
+.site-main .brand-area .single-brand > img{
+    border-radius: 10%;
+}
+/* end brands area */
