@@ -1,0 +1,118 @@
+/*@import fonts from fonts.css*/
+@import url(./fonts.css);
+
+/*@import _variables */
+@import url(./partials/_variable.css);
+
+/* @import _global styling*/
+@import url(./partials/_global.css);
+
+/*start navigation*/
+.header_area .main_menu .navbar .navbar-brand .logo{
+    margin-right: 2vw;
+}
+.header_area .main_menu .navbar .navbar-brand{
+    width: 48vw;
+}
+.header_area .main_menu .navbar .nav-link{
+    font-family: var(--monospace);
+    font-weight: bold;
+    color: black; 
+}
+.header_area .main_menu .navbar-custom {
+    background-color: #d7e7ee 
+}
+
+.header_area .main_menu .navbar-nav .active a{
+    background: var(--gradient-color);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.header_area .main_menu .navbar-nav a:hover{
+    background: var(--gradient-color);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+/*end navigation*/
+
+/* start banner area */
+
+/* .site-main .site-banner {
+    background: url(../img/banner/home-banner-3.jpg) no-repeat;
+} */
+
+.site-main .site-banner .site-title h3{
+    padding-top: 10%;
+    font-weight: 500;
+}
+
+
+.site-main .site-banner .site-title h1{
+    font-size: 4.5rem;
+    word-spacing: -3vmin;
+}
+
+.site-main .site-banner .site-title h4{
+    font-size: 1.5rem;
+}
+
+.site-main .site-banner .banner-image > img{
+    margin-top: 3rem;
+    width: 25rem;
+    border-radius: 1.5rem;
+}
+
+.about-image > img{
+    border-radius: 1.5vh;
+}
+
+@media only screen and (max-width: 560px) {
+    .about-image > img{
+        margin-top: 20%;
+    }
+}
+/* end banner area */
+
+/* start about area */
+
+.site-main .about-area .about-title .paragraph > p{
+    padding: 1rem 0;
+}
+
+@media only screen and (min-width: 640px) {
+    .site-main .about-area{
+        padding: 8rem 0rem;
+    }
+    .site-main .about-area .about-title h2 > span{
+        display: block;
+        letter-spacing: 21px;
+    }
+}
+.socials{
+    font-size: xx-large;
+    margin:0 0 1rem 1rem;
+}
+/* end about area */
+
+/* start brands area */
+
+    
+.site-main .brand-area .first-row .col-lg-4 > .single-brand{
+    opacity: 50%;
+    margin: 8rem;
+    border: 1px solid var(--border-color);
+    text-align: center;
+    padding: 1.8rem 0rem;
+    margin: .9rem 0;
+    width: 180px;
+    height: 100px;
+    cursor: pointer;
+    transition: transform .4s ease;
+}
+.site-main .brand-area .single-brand > img{
+    border-radius: 10%;
+}
+/* end brands area */
