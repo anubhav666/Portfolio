@@ -24,8 +24,8 @@
 <body>
     <!-- ======================Start Header Area================== -->
     <header class="header_area">
-        <div class="main_menu">
-            <nav class="navbar navbar-expand-lg navbar-custom">
+        <div class="main_menu" id="home">
+            <nav class="navbar navbar-expand-lg navbar-custom g-0">
                 <div class="container-fluid">
                   <a class="navbar-brand" href="#"><img src="./img/nav-icon.png" alt="nav-icon" class="logo" srcset="" width="50vw" height="50vh" style="border-radius:50%"><img src="./img/screenshot.png" alt="Word Art" class="word" srcset="" width="220vw" height="60vh"></a>
                   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -35,13 +35,13 @@
                     <div class="mr-auto"></div>
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                       <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a class="nav-link active" aria-current="page" href="#home">Home</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
+                        <a class="nav-link" href="#about">About</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="#">Projects</a>
+                        <a class="nav-link" href="#project">Projects</a>
                       </li>
                       <li class="nav-item">
                         <a class="nav-link" href="#">Blogs</a>   
@@ -93,22 +93,22 @@
             <div class="modal-dialog modal-dialog-centered" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title font-roboto" id="exampleModalCenterTitle">Get in Touch</h5>
+                  <h5 class="modal-title font-monospace" id="exampleModalCenterTitle">Get in Touch</h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
                 <div class="modal-body">
                   <form action="https://formspree.io/f/xyyornlw" method="POST">
-                    <div class="form-group font-roboto">
+                    <div class="form-group font-monospace">
                       <label for="recipient-name" class="col-form-label">Name:</label>
                       <input type="text" name="name" class="form-control" id="recipient-name" required>
                     </div>
-                    <div class="form-group font-roboto">
+                    <div class="form-group font-monospace">
                       <label for="recipient-email" name="email" class="col-form-label">Email:</label>
                       <input type="email" name="email" class="form-control" id="recipient-email" required>
                     </div>
-                    <div class="form-group font-roboto">
+                    <div class="form-group font-monospace">
                       <label for="message-text" class="col-form-label">Message:</label>
                       <textarea name="message" class="form-control" id="message-text"></textarea>
                     </div>
@@ -131,7 +131,7 @@
       <!-- =======================End Banner Area=================== -->
 
       <!-- =======================Start About Area================== -->
-      <section class="about-area">
+      <section class="about-area" id="about">
         <div class="container-fluid">
            <div class="row">
           <div class="col-lg-6 col-md-12 col-xs-4">
@@ -160,46 +160,85 @@
         </div>
       </section>
       <!-- =======================End About Area================== -->
-      <!-- =======================Star Brand Area================== -->
 
-      <!-- <section class="brand-area">
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-xl-6 col-lg-12 col-md-12">
-              <div class="row brands">
-                <div class="col-lg-4 col-md-6 col-sm-6">
-                  <div class="single-brand">
-                    <img src="./img/brand/Brand-3.png" alt="Brand-1">
-                  </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6">
-                  <div class="single-brand">
-                    <img src="./img/brand/Brand-1.png" alt="Brand-2">
-                  </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6">
-                  <div class="single-brand">
-                    <img src="./img/brand/Brand-2.png" alt="Brand-3">
-                  </div>
-                </div>
-              </div>
+      <!--  ======================= Project Area =============================  -->
+      <section id="project" class="project-area">
+        <div class="container">
+            <div class="project-title pb-5">
+                <h1 class="text-uppercase title-h1">Project Showcase</h1>
             </div>
-            <div class="col-xl-6 col-lg-12 col-md-12">
-              <div class="experience-area">
-                <div class="d-flex flex-row proficiency">
-                  <h2 class="p-3 skills">10</h2>
-                  <h2>
-                    <span>Years</span>
-                    <span>Experience</span>
-                    <span>Working</span>
-                  </h2>
+
+            <div class="row grid">
+                <div class="col-lg-4 col-md-6 col-sm-12 element-item">
+                    <div class="my-project">
+                        <div class="img">
+                            <a class="test-popup-link" href="https://youtu.be/H0qpRrPE7H0">
+                                <iframe class="img-fluid" width="560" height="315" src="https://www.youtube.com/embed/H0qpRrPE7H0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </a>
+                        </div>
+                        <div class="title py-4">
+                            <h4 class="font-monospace">Pong Game</h4>
+                            <span class="text-secondary">Using Arduino</span>
+                        </div>
+                    </div>
                 </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 element-item">
+                    <div class="my-project">
+                        <div class="img">
+                            <a class="test-popup-link" href="https://youtu.be/2DP5iUvnQyg">
+                                <iframe class="img-fluid" width="560" height="315" src="https://www.youtube.com/embed/2DP5iUvnQyg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </a>
+                        </div>
+                        <div class="title py-4">
+                            <h4 class="font-monospace">Micro Servo Bot</h4>
+                            <span class="text-secondary">Using I2C Servo</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 element-item">
+                    <div class="my-project">
+                        <div class="img">
+                            <a class="test-popup-link" href="https://youtu.be/cPD1cd6_GIY">
+                                <iframe class="img-fluid" width="560" height="315" src="https://www.youtube.com/embed/cPD1cd6_GIY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </a>
+                        </div>
+                        <div class="title py-4">
+                            <h4 class="font-monospace">Smart Bin</h4>
+                            <span class="text-secondary">Using HC-SR04 Ultrasonic Sensor</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 element-item">
+                  <div class="my-project">
+                      <div class="img">
+                          <a class="test-popup-link" href="https://youtu.be/rUNOdXTNoyY">
+                            <iframe class="img-fluid" width="560" height="315" src="https://www.youtube.com/embed/rUNOdXTNoyY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                          </a>
+                      </div>
+                      <div class="title py-4">
+                          <h4 class="font-monospace">Arduino Replica</h4>
+                          <span class="text-secondary">Programmed using UART</span>
+                      </div>
+                  </div>
               </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 element-item">
+                    <div class="my-project">
+                        <div class="img">
+                            <a class="test-popup-link" href="https://www.linkedin.com/posts/anubhav-dutta-408368191_task6-gripsept21-task6-activity-6856836049264537600-sFYx?utm_source=linkedin_share&utm_medium=member_desktop_web">
+                              <iframe class="img-fluid" src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:6856835927059292160" height="839" width="504" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
+                            </a>
+                        </div>
+                        <div class="title py-4">
+                            <h4 class="font-monospace">Fault Detection System</h4>
+                            <span class="text-secondary">using MQTT and OpenCV</span>
+                        </div>
+                  </div>
+                </div>
             </div>
-          </div>
-        </div>
-      </section> -->
-      <!-- =======================End Brand Area================== -->
+    </section>
+
+    <!--  ======================= End Project Area =============================  -->
+
     </main>
     <!-- =======================End Main Area=================== -->
     
@@ -209,5 +248,29 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
     <!--BootStrap JS-->
     <script src="./js/bootstrap.min.js"></script>
+    <!-- FireBase SDK -->
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.1/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.9.1/firebase-analytics.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+    
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      const firebaseConfig = {
+        apiKey: "AIzaSyCX6lSAT8aILMgzhZUlIZQiYRnx94K1yEY",
+        authDomain: "bootstrap-portfolio-2472a.firebaseapp.com",
+        projectId: "bootstrap-portfolio-2472a",
+        storageBucket: "bootstrap-portfolio-2472a.appspot.com",
+        messagingSenderId: "1003742286241",
+        appId: "1:1003742286241:web:8980cf08390bfcdbb67be0",
+        measurementId: "G-TH2RHG8ZZK"
+      };
+    
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+    </script>
 </body>
 </html>

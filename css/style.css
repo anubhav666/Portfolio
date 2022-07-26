@@ -8,6 +8,11 @@
 @import url(./partials/_global.css);
 
 /*start navigation*/
+.navbar{
+    position: fixed;
+    z-index: 1;
+}
+
 .header_area .main_menu .navbar .navbar-brand .logo{
     margin-right: 2vw;
 }
@@ -20,7 +25,7 @@
     color: black; 
 }
 .header_area .main_menu .navbar-custom {
-    background-color: #d7e7ee 
+    background-color: #d7e7ee;
 }
 
 .header_area .main_menu .navbar-nav .active a{
@@ -39,7 +44,9 @@
 /*end navigation*/
 
 /* start banner area */
-
+.site-main{
+    margin-top: 6.4%;
+}
 /* .site-main .site-banner {
     background: url(../img/banner/home-banner-3.jpg) no-repeat;
 } */
@@ -97,22 +104,28 @@
 }
 /* end about area */
 
-/* start brands area */
+/* Project Area */ 
 
-    
-.site-main .brand-area .first-row .col-lg-4 > .single-brand{
-    opacity: 50%;
-    margin: 8rem;
-    border: 1px solid var(--border-color);
-    text-align: center;
-    padding: 1.8rem 0rem;
-    margin: .9rem 0;
-    width: 180px;
-    height: 100px;
-    cursor: pointer;
-    transition: transform .4s ease;
+.site-main .project-area{
+    padding: 1rem 0;
 }
-.site-main .brand-area .single-brand > img{
-    border-radius: 10%;
+
+.site-main .project-area .button-group button{
+    background: transparent;
+    border: none;
+    font: normal 500 16px/130px var(--monospace);
 }
-/* end brands area */
+
+.site-main .project-area .button-group button + button{
+    padding-left: 3rem;
+}
+
+.site-main .project-area .grid .our-project > .title h4{
+    font: normal 700 25px/12px var(--monospace);
+}
+
+.site-main .project-area .grid .our-project .img a:hover img{
+    filter: brightness(1.1) drop-shadow(1px 8px 30px #b1afaf);
+}
+
+/* End Project Area */ 
