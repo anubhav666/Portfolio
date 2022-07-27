@@ -1,3 +1,6 @@
+body{
+    overflow-x: hidden;
+}
 .navbar .navbar-brand .word{
     margin-right: 0.75vw;
 }
