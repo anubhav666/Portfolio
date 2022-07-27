@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>News</title>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="./css/materialize.min.css">
+    <link rel="shortcut icon" href="favicon.png" type="image/png">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="navbar fixed-top navbar-expand-lg navbar-custom g-0">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="https://newsapi.org/"><img src="./img/wordart.jpg" alt="Word Art" class="word" srcset="" width="15%" style="border-radius:15%">NEWS</a>
+        <form class="d-flex" role="search">
+            <input class="form-control me-2 bg-white" id="search" type="search" placeholder="Search" aria-label="Search" style="border-radius: 0.375rem; padding-left:10px;">
+            <button class="btn btn-outline-success bg-white" onclick="checkInput()" type="submit">Search</button>
+        </form>
+        </div>
+    </div>
+	<div class="news-area">
+		<div class="row grid">
+			<div id="newsResults"></div>
+		</div>
+
+    <div id="loader">
+        <div class="progress">
+            <div class="indeterminate"></div>
+        </div>
+    </div>
+	<script src="./js/jquery-3.3.1.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+	<script src="./js/materialize.min.js"></script>
+	<script src="./js/app.js"></script>
+</body>
+
+</html>
