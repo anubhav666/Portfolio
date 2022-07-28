@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-  let url = "https://newsapi.org/v2/everything?q=(VLSI OR iot)&language=en&apiKey=f61d41c7fc80416582e9ae12f4db92b8";
+  let url = "https://newsapi.org/v2/everything?q=(anime OR VLSI OR iot)&language=en&apiKey=f61d41c7fc80416582e9ae12f4db92b8";
   function shuffle(array) {
     let currentIndex = array.length,  randomIndex;
   
