@@ -27,14 +27,14 @@
     height: 30px;
     position: relative;
     border: 4px solid #Fff;
-    animation: loader 2s infinite ease;
+    animation: loader 4s infinite ease;
   }
   .loader-inner {
     vertical-align: top;
     display: inline-block;
     width: 100%;
     background-color: #fff;
-    animation: loader-inner 2s infinite ease-in;
+    animation: loader-inner 4s infinite ease-in;
   }
   
   @keyframes loader {
@@ -162,6 +162,14 @@
 /* end about area */
 
 /* Project Area */ 
+
+iframe{
+    border-radius: 10px;
+}
+
+.my-project{
+    text-align: center;
+}
 
 .site-main .project-area{
     padding: 1rem 0;
