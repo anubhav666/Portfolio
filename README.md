@@ -12,4 +12,4 @@ It uses:<br>
 
 <br>
 
-## Check out the fully deployed app @[luke-anubis.herokuapp.com](https://luke-anubis.vercel.app/)
+## Check out the fully deployed app @[luke-anubis.vercel.app](https://luke-anubis.vercel.app/)
