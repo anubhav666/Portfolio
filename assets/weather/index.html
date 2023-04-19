@@ -1,36 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Weather App - JavaScript</title>
-    <link rel="stylesheet" href="font/Rimouski.css">
-    <link rel="stylesheet" href="style.css">
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Weather</title>
+
+	<!-- Reset -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/modern-normalize@1.1.0/modern-normalize.min.css">
+	<!-- Favicon -->
+	<link rel="icon" href="./img/icons8-partly-cloudy-day-16.ico" type="image/x-image">
+	<!-- Google fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;700&display=swap" rel="stylesheet">
+
+	<!-- Main stylesheet -->
+	<link rel="stylesheet" href="app.css">
 </head>
 <body>
-    
-    <div class="container">
-        <div class="app-title">
-            <p>Weather</p>
-        </div>
-        <div class="notification"> </div>
-        <div class="weather-container">
-            <div class="weather-icon">
-                <img src="icons/unknown.png" alt="">
-            </div>
-            <div class="temperature-value">
-                <p>- °<span>C</span></p>
-            </div>
-            <div class="temperature-description">
-                <p> - </p>
-            </div>
-            <div class="location">
-                <p>-</p>
-            </div>
-        </div>
-    </div>
-    
-    <script src="app.js"></script>
+	<div class="container">
+		<header>
+			<h1>Add location</h1>
+
+			<form id="search-form">
+				<label for="search-term">Search the city or area</label>
+
+				<div class="form-row">
+					<input type="text" placeholder="e.g. Barcelona" name="search-term" id="search-term" autofocus>
+
+					<button type="submit">
+						<img src="img/plus-circle.svg" alt="Plus circle">
+					</button>
+				</div> <!-- form-row -->
+
+				<p class="form-msg"></p>
+			</form>
+		</header>
+
+		<section>
+			<ul class="cities">
+			</ul>
+		</section>
+
+		<footer>
+			<p><small>Design and code by <a href="https://luke-anubis.vercel.app/">Anubhav Dutta</a>
+		</footer>
+	</div> <!-- container -->
+
+	<script src="app.js"></script>
 </body>
 </html>
-
-

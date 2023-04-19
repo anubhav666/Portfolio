@@ -1,94 +1,112 @@
+// DOM elements
+const form = document.querySelector("#search-form")
+const input = document.querySelector("#search-term")
+const msg = document.querySelector(".form-msg")
+const list = document.querySelector(".cities")
 
-// api key : 01134172940c847bdc05ca053c2827c2
+// Get your OpenWeather API key: https://home.openweathermap.org/users/sign_up
+const apiKey = "01134172940c847bdc05ca053c2827c2"
 
-// SELECT ELEMENTS
-const iconElement = document.querySelector(".weather-icon");
-const tempElement = document.querySelector(".temperature-value p");
-const descElement = document.querySelector(".temperature-description p");
-const locationElement = document.querySelector(".location p");
-const notificationElement = document.querySelector(".notification");
+form.addEventListener('submit', e => {
+	// Prevent default form submission
+	e.preventDefault()
 
-// App data
-const weather = {};
+	// Hide any message that might be displayed
+	msg.textContent = ''
+	msg.classList.remove('visible')
 
-weather.temperature = {
-    unit : "celsius"
-}
+	// Get the search value
+	let inputVal = input.value
 
-// APP CONSTS AND VARS
-const KELVIN = 273;
-// API KEY
-const key = "01134172940c847bdc05ca053c2827c2";
+	// Check if there's already a city that matches the search criteria
+	const listItemsArray = Array.from(list.querySelectorAll('.cities li'))
 
-// CHECK IF BROWSER SUPPORTS GEOLOCATION
-if('geolocation' in navigator){
-    navigator.geolocation.getCurrentPosition(setPosition, showError);
-}else{
-    notificationElement.style.display = "block";
-    notificationElement.innerHTML = "<p>Browser doesn't Support Geolocation</p>";
-}
+	if (listItemsArray.length > 0) {
+		const filteredArray = listItemsArray.filter(el => {
+			let content = ''
+			let cityName = el.querySelector('.city__name').textContent.toLowerCase()
+			let cityCountry = el.querySelector('.city__country').textContent.toLowerCase()
 
-// SET USER'S POSITION
-function setPosition(position){
-    let latitude = position.coords.latitude;
-    let longitude = position.coords.longitude;
-    
-    getWeather(latitude, longitude);
-}
+			// Check for the <city,country> format
+			if (inputVal.includes(',')) {
+				// If the country code is invalid (ex. athens,grrrr), keep only the city name
+				if (inputVal.split(',')[1].length > 2) {
+					inputVal = inputVal.split(',')[0]
 
-// SHOW ERROR WHEN THERE IS AN ISSUE WITH GEOLOCATION SERVICE
-function showError(error){
-    notificationElement.style.display = "block";
-    notificationElement.innerHTML = `<p> ${error.message} </p>`;
-}
+					// Get the content from the existing city
+					content = cityName
+				} else {
+					// Country code is valid so keep both city and country
+					content = `${cityName},${cityCountry}`
+				}
+			} else {
+				// Only the <city> format is used
+				content = cityName
+			}
 
-// GET WEATHER FROM API PROVIDER
-function getWeather(latitude, longitude){
-    let api = `http://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${key}`;
-    
-    fetch(api)
-        .then(function(response){
-            let data = response.json();
-            return data;
-        })
-        .then(function(data){
-            weather.temperature.value = Math.floor(data.main.temp - KELVIN);
-            weather.description = data.weather[0].description;
-            weather.iconId = data.weather[0].icon;
-            weather.city = data.name;
-            weather.country = data.sys.country;
-        })
-        .then(function(){
-            displayWeather();
-        });
-}
+			// Return whether or not the existing content matches the form input value
+			return content == inputVal.toLowerCase()
+		})
 
-// DISPLAY WEATHER TO UI
-function displayWeather(){
-    iconElement.innerHTML = `<img src="icons/${weather.iconId}.png"/>`;
-    tempElement.innerHTML = `${weather.temperature.value}°<span>C</span>`;
-    descElement.innerHTML = weather.description;
-    locationElement.innerHTML = `${weather.city}, ${weather.country}`;
-}
+		// If filteredArray is not blank, we have matches so we show a message and exit
+		if (filteredArray.length > 0) {
+			msg.textContent = `You already know the weather for ${filteredArray[0].querySelector(".city__name").textContent} ...otherwise be more specific by providing the country code as well 😉`;
 
-// C to F conversion
-function celsiusToFahrenheit(temperature){
-    return (temperature * 9/5) + 32;
-}
+			msg.classList.add('visible')
 
-// WHEN THE USER CLICKS ON THE TEMPERATURE ELEMENET
-tempElement.addEventListener("click", function(){
-    if(weather.temperature.value === undefined) return;
-    
-    if(weather.temperature.unit == "celsius"){
-        let fahrenheit = celsiusToFahrenheit(weather.temperature.value);
-        fahrenheit = Math.floor(fahrenheit);
-        
-        tempElement.innerHTML = `${fahrenheit}°<span>F</span>`;
-        weather.temperature.unit = "fahrenheit";
-    }else{
-        tempElement.innerHTML = `${weather.temperature.value}°<span>C</span>`;
-        weather.temperature.unit = "celsius"
-    }
-});
+			form.reset()
+			input.focus()
 
+			return
+		}
+	}
+
+	// AJAX magic
+	const url = `https://api.openweathermap.org/data/2.5/weather?q=${inputVal}&appid=${apiKey}&units=metric`
+
+	fetch(url)
+		.then(response => response.json())
+		.then(data => {
+			// If we get a 404 code, throw an error
+			if (data.cod == '404') {
+				throw new Error(`${data.cod}, ${data.message}`)
+			}
+
+			// Let's destructure the data object
+			const {main, name, sys, weather} = data
+
+			// Define the icon location
+			const icon = `img/weather/${weather[0]['icon']}.svg`
+
+			// Create the list item for the new city
+			const li = document.createElement('li')
+
+			// Define markup
+			const markup = `
+				<figure>
+					<img src="${icon}" alt="${weather[0]['description']}">
+				</figure>
+
+				<div>
+					<h2>${Math.round(main.temp)}<sup>°C</sup></h2>
+					<p class="city__conditions">${weather[0]['description'].toUpperCase()}</p>
+					<h3><span class="city__name">${name}</span><span class="city__country">${sys.country}</span></h3>
+				</div>
+			`
+
+			// Add the new markup to the list item
+			li.innerHTML = markup
+
+			// Add the new list item to the page
+			list.appendChild(li)
+		})
+		.catch(() => {
+			msg.textContent = 'Please search for a valid city!'
+			msg.classList.add('visible')
+		})
+
+	msg.textContent = ''
+
+	form.reset()
+	input.focus()
+})
