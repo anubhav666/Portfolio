@@ -7,6 +7,9 @@
 /* @import _global styling*/
 @import url(./partials/_global.css);
 
+body{
+    scroll-behavior: smooth;
+}
 /* start preloader */
 .loader-wrapper {
     width: 100%;
@@ -18,7 +21,7 @@
     display:flex;
     justify-content: center;
     align-items: center;
-    z-index:2;
+    z-index:3;
   }
 
   .loader {
@@ -57,7 +60,7 @@
 /*start navigation*/
 .navbar{
     position: fixed;
-    z-index: 1;
+    z-index: 2;
     width: 100%;
 }
 
@@ -194,3 +197,30 @@ iframe{
 }
 
 /* End Project Area */ 
+
+/* Achievements Area */ 
+.site-main .achievements-area{
+    margin-top: 5rem;
+    margin-bottom: 10rem;
+} 
+.site-main .achievements-area .card{
+    margin-left: 30%;
+    margin-right: 30%;
+    text-align: center;
+}
+
+.site-main .achievements-area .card-img-top{
+    padding: 1rem;
+    align-self: center;
+}
+
+.site-main .achievements-area .title-h2{
+    text-align: center;
+} 
+@media only screen and (max-width: 560px) {
+    .site-main .achievements-area .card{
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+}
+/* End Achievements Area */ 
