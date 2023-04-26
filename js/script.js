@@ -7,6 +7,7 @@ function checkInput() {
     var query = document.getElementById('search').value;
     window.find(query);
 }
+
 var p = document.querySelector('.typed-text');
 p.innerHTML = '';
 var n = 0;
@@ -32,3 +33,9 @@ var typeTimer = setInterval(function() {
   };
 }, 150)
 }
+
+$('.navbar-nav li a').on('click', function(){
+  if(!$( this ).hasClass('dropdown-toggle')){
+      $('.navbar-collapse').collapse('hide');
+  }
+});
