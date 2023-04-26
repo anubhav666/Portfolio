@@ -3,11 +3,6 @@ $(window).on("load",function(){
     setTimeout(type, 0);
 });
 
-function checkInput() {
-    var query = document.getElementById('search').value;
-    window.find(query);
-}
-
 var p = document.querySelector('.typed-text');
 p.innerHTML = '';
 var n = 0;
@@ -38,4 +33,8 @@ $('.navbar-nav li a').on('click', function(){
   if(!$( this ).hasClass('dropdown-toggle')){
       $('.navbar-collapse').collapse('hide');
   }
+});
+
+particlesJS.load('particles-js', 'particlesjs-config.json', function() {
+  console.log('callback - particles.js config loaded');
 });

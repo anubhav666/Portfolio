@@ -10,6 +10,43 @@
 body{
     scroll-behavior: smooth;
 }
+
+/* start custom scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-thumb {
+    background: black;
+    border-radius: 5px;
+    z-index: 5;
+}
+::-webkit-scrollbar-track {
+    background: gainsboro;
+    border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+/* end custom scrollbar */
+
+/* start particle background */
+canvas{
+    position: absolute;
+    top: 0px;
+    left: 0;
+    right: 0;
+    bottom: 0px;
+    height: 100%;
+    z-index: -1;
+}
+
+#particle-js{
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+/* end particle background */
+
 /* start preloader */
 .loader-wrapper {
     width: 100%;
@@ -101,6 +138,7 @@ body{
 @media only screen and (max-width: 560px) {
     .site-main{
         margin-top: 20%;
+        
     }
 }
 
