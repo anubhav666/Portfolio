@@ -266,5 +266,6 @@ iframe{
 /* Start Footer Area */ 
 .footer-area .visitor-counter{
     text-align: center;
+    font-family: var(--monospace);
 }
 /* End Footer Area */ 
