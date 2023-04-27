@@ -262,3 +262,9 @@ iframe{
     }
 }
 /* End Achievements Area */ 
+
+/* Start Footer Area */ 
+.footer-area .visitor-counter{
+    text-align: center;
+}
+/* End Footer Area */ 
