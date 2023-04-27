@@ -5,12 +5,12 @@ body{
 }
 /* Header Area */
 .reset-button{
-  display: block;
+  display: inline-block;
   background-color: #aaaaaa;
   border-radius: 1.5vh;
   border-color: transparent;
   width: 43%;
-  height: 5vh;
+  height: 4vh;
   margin: auto;
   font-family: monospace, Courier, monospace;
   font-weight: bolder;
@@ -18,14 +18,48 @@ body{
   text-align: center;
   transition-duration: 0.4s;
 }
+.reset-button:hover {
+  background-color: #ffa3a3; /* Red Hue */
+  color: white;
+}
+
+.back-button{
+  display: inline-block;
+  background-color: #aaaaaa;
+  border-radius: 1.5vh;
+  border-color: transparent;
+  width: 10%;
+  height: 4vh;
+  margin-right: 18vw;
+  margin-bottom: 1vh;
+  font-family: monospace, Courier, monospace;
+  font-weight: bolder;
+  font-size: 2.15vh;
+  text-align: center;
+  transition-duration: 0.4s;
+}
+
+.back-button:hover {
+  background-color: #ffa3a3; /* Red Hue */
+  color: white;
+}
+
+p{
+  color: #ffff;
+  text-align: center;
+  margin-top: 0%;
+  margin-bottom: 0.5vh;
+  font-size: small;
+  font-family: monospace, 'Courier Sans';
+}
 @media only screen and (max-width: 560px) {
   .reset-button{
     width: 95%;
   }
-}
-.reset-button:hover {
-  background-color: #ffa3a3; /* Red Hue */
-  color: white;
+  .back-button{
+    width: 50%;
+  }
+  
 }
 /* End Header Area */
 
@@ -39,14 +73,14 @@ body{
     display:flex;
     justify-content: center;
     align-items: center;
-    height: 92vh;
+    height: 90vh;
     font-size: 7.5vmin;
     overscroll-behavior: contain;
     overflow-y: hidden;
 }
 @media only screen and (max-width: 500px) {
   .flex-container{
-    height: 60vh;    
+    height: 50vh;    
   }
 }
 #game-board{

@@ -228,7 +228,30 @@ form button:active {
 	margin-left: .5rem;
 }
 
+/* ================================================= */
+/* Buttons */
+/* ================================================= */
 
+.back-button{
+	display: inline-block;
+	background-color: #050B12;
+	border-radius: 1.5vh;
+	border-color: transparent;
+	width: 10%;
+	height: 5vh;
+	margin-right: 18vw;
+	margin-bottom: 1vh;
+	font-family: monospace, Courier, monospace;
+	font-weight: bolder;
+	font-size: 2.15vh;
+	text-align: center;
+	transition-duration: 0.4s;
+	color: white;
+  }
+  
+  .back-button:hover {
+	background-color: #03B5AA; /* Red Hue */
+  }
 
 /* ================================================= */
 /* 560px+ */
@@ -261,4 +284,15 @@ form button:active {
 	.container {
 		padding: 4rem;
 	}
+}
+
+/* ================================================= */
+/* 560px- */
+/* ================================================= */
+
+@media screen and (max-width: 560px) {
+	.back-button{
+		width: 50%;
+		height: 7vh;
+	  }
 }
