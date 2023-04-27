@@ -2,7 +2,7 @@
 /* Custom properties */
 /* ================================================= */
 :root {
-	--body-font: 'Figtree', sans-serif;
+	--body-font: monospace,'Courier Sans';
 
 	--p-shade-80: #050B12;
 	--p-shade-50: #0e1b2d;

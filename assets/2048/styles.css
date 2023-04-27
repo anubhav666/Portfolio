@@ -1,86 +1,54 @@
-/* Preloader Area */
-body {
-    background: #3c284a;
+body{
+  overscroll-behavior: contain;
+  overflow-y: hidden;
+  background-color: #333;
+}
+/* Header Area */
+.reset-button{
+  display: block;
+  background-color: #aaaaaa;
+  border-radius: 1.5vh;
+  border-color: transparent;
+  width: 43%;
+  height: 5vh;
+  margin: auto;
+  font-family: monospace, Courier, monospace;
+  font-weight: bolder;
+  font-size: 2.15vh;
+  text-align: center;
+  transition-duration: 0.4s;
+}
+@media only screen and (max-width: 560px) {
+  .reset-button{
+    width: 95%;
   }
-  body .loading-container {
-    position: absolute;
-    top: 48%;
-    left: 48%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    -moz-column-gap: 8px;
-         column-gap: 8px;
-  }
-  body .loading-container .loading-circle {
-    display: block;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-  }
-  body .loading-container .loading-circle:nth-child(1), body .loading-container .loading-circle:nth-child(3), body .loading-container .loading-circle:nth-child(5) {
-    background-color: #ff421d;
-    -webkit-animation: bounce 500ms infinite;
-            animation: bounce 500ms infinite;
-  }
-  body .loading-container .loading-circle:nth-child(2), body .loading-container .loading-circle:nth-child(4), body .loading-container .loading-circle:nth-child(6) {
-    background-color: #ff6536;
-    -webkit-animation: bounceSecondary 500ms infinite;
-            animation: bounceSecondary 500ms infinite;
-  }
-  
-  @-webkit-keyframes bounce {
-    0%, 100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-10px);
-    }
-  }
-  
-  @keyframes bounce {
-    0%, 100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-10px);
-    }
-  }
-  @-webkit-keyframes bounceSecondary {
-    0%, 100% {
-      transform: translateY(-10px);
-    }
-    50% {
-      transform: translateY(0px);
-    }
-  }
-  @keyframes bounceSecondary {
-    0%, 100% {
-      transform: translateY(-10px);
-    }
-    50% {
-      transform: translateY(0px);
-    }
-  }
-/* End Preloader Area */
+}
+.reset-button:hover {
+  background-color: #ffa3a3; /* Red Hue */
+  color: white;
+}
+/* End Header Area */
 
 
 *, *::before, *::after{
     box-sizing: border-box;
     font-family: Arial;
 }
-body{
+.flex-container{
     background-color: #333;
     display:flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin: 0;
+    height: 92vh;
     font-size: 7.5vmin;
     overscroll-behavior: contain;
     overflow-y: hidden;
 }
-
+@media only screen and (max-width: 500px) {
+  .flex-container{
+    height: 60vh;    
+  }
+}
 #game-board{
     display:grid;
     grid-template-rows: repeat(var(--grid-size), var(--cell-size));
