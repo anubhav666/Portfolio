@@ -101,11 +101,9 @@ canvas{
     width: 100%;
 }
 
-.header_area .main_menu .navbar .navbar-brand .logo{
-    margin-right: 2vw;
-}
+
 .header_area .main_menu .navbar .navbar-brand{
-    width: 48vw;
+    width: 100%;
 }
 .header_area .main_menu .navbar .nav-link{
     font-family: var(--monospace);
