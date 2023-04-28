@@ -144,7 +144,7 @@ canvas{
     white-space: wrap;
 }
 /* .site-main .site-banner {
-    background: url(../img/banner/home-banner-3.jpg) no-repeat;
+    background: url(../img/banner/home-banner-3.jpg) fixed no-repeat;
 } */
 
 .site-main .site-banner .site-title h3{
