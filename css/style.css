@@ -133,16 +133,11 @@ canvas{
 .site-main{
     margin-top: 6.4%;
 }
-@media only screen and (max-width: 560px) {
-    .site-main{
-        margin-top: 20%;
-        
-    }
-}
-
 .typed-text{
     white-space: wrap;
+    line-height: 1.5em;
 }
+
 /* .site-main .site-banner {
     background: url(../img/banner/home-banner-3.jpg) fixed no-repeat;
 } */
@@ -151,7 +146,6 @@ canvas{
     padding-top: 10%;
     font-weight: 500;
 }
-
 
 .site-main .site-banner .site-title h1{
     font-size: 4.5rem;
@@ -175,6 +169,12 @@ canvas{
 @media only screen and (max-width: 560px) {
     .about-image > img{
         margin-top: 20%;
+    }
+    .site-main{
+        margin-top: 20%;
+    }
+    .typed-text {
+        height: 3em;
     }
 }
 /* end banner area */
