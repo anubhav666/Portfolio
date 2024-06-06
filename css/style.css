@@ -182,12 +182,12 @@ canvas{
 /* start about area */
 
 .site-main .about-area .about-title .paragraph > p{
-    padding: 1rem 0;
+    padding: 0 0;
 }
 
 @media only screen and (min-width: 640px) {
     .site-main .about-area{
-        padding: 8rem 0rem;
+        padding: 0.1rem 0rem;
     }
     .site-main .about-area .about-title h2 > span{
         display: block;
@@ -212,17 +212,17 @@ canvas{
 }
 
 .site-main .experience-area .card-img-top{
-    padding: 1rem;
+    padding: 0%;
     align-self: center;
 }
 
 .site-main .experience-area .title-h2{
     text-align: center;
 } 
-@media only screen and (max-width: 560px) {
-    .site-main .achievements-area .card{
-        margin-left: 10%;
-        margin-right: 10%;
+@media only screen and (max-width: 720px) {
+    .site-main .experience-area .card{
+        margin-left: 5%;
+        margin-right: 5%;
     }
 }
 /* End Experience Area */ 
