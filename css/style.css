@@ -200,6 +200,33 @@ canvas{
 }
 /* end about area */
 
+/* Experience Area */ 
+.site-main .experience-area{
+    margin-top: 5rem;
+    margin-bottom: 10rem;
+} 
+.site-main .experience-area .card{
+    margin-left: 30%;
+    margin-right: 30%;
+    text-align: center;
+}
+
+.site-main .experience-area .card-img-top{
+    padding: 1rem;
+    align-self: center;
+}
+
+.site-main .experience-area .title-h2{
+    text-align: center;
+} 
+@media only screen and (max-width: 560px) {
+    .site-main .achievements-area .card{
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+}
+/* End Experience Area */ 
+
 /* Project Area */ 
 
 iframe{
